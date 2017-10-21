@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="host" default="192.168.178.76" />
+
+  <node pkg="bosch_indra_driver" type="bosch_indra_node" name="bosch_indra_node" output="screen">
+    <param name="host" value="$(arg host)" />
+  </node>
+  <node pkg="bosch_indra_drive_test" type="joy_control.py" name="bosch_indra_drive_test" output="screen"/>
+  <node name="joystick" pkg="joy" type="joy_node"/>
+</launch>
